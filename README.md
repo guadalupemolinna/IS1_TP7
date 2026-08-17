@@ -238,13 +238,16 @@ flowchart TD
 ### i. Borrar / Cerrar ticket
 ```mermaid
 flowchart TD
-    Start(( )) --> A["login(cliente.id, password)"]
-    A --> Decision{validación?}
-    Decision -- [no] --> Error["return error"] --> EndError(( ))
-    Decision -- [si] --> B["los(ticket.id)"]
-    B --> End(( ))
+    A([Inicio]) --> B["login(cliente.id, password)"]
+    B --> C{¿Validación?}
+    C -- No --> C1["return error"]
+    C1 --> Z([Fin])
+    C -- Sí --> D["get(ticket.id)"]
+    D --> E["return(ticket.id, cliente.id, descripcion, fecha_creacion, fecha_cierre, estado)"]
+    E --> F["status(estado(cerrado))"]
+    F --> G["new(ticket.id, descripcion) → auditoría"]
+    G --> Z
 ```
-
 ---
 
 ## 3. Diagramas de Estados
