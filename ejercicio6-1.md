@@ -12,7 +12,7 @@ flowchart LR
     ul([Usuario Lector])
 
     subgraph Sistema de Gestión de Biblioteca
-        CU1((buscar libro por<br/>título/autor))
+        CU1((buscar libro por<br/>título/autor/ISBN))
         CU2((reservar libro))
         CU3((consultar prestamos<br/>activos e historial))
         CU4((registrar devolución))
