@@ -35,6 +35,7 @@ classDiagram
     }
 
     class Libro {
+        -isbn: String
         -titulo: String
         -autor: String
         -estado: String
@@ -70,7 +71,7 @@ classDiagram
 
     class Inventario {
         +altaLibro(libro: Libro) void
-        +bajaLibro(titulo: String, autor: String) void
+        +bajaLibro(isbn: String) void
         +modificarLibro(libro: Libro) void
     }
 
